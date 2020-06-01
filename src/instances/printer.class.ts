@@ -1,13 +1,30 @@
 import { EFontColor, EBackColor } from 'src/enums';
+import { IFormat } from 'src/interfaces';
 
 class Printer {
     /**
      * WorkSpace Path FileName
      */
     private _fileRoot = 'src';
+    private _reset = '\x1b[0m';
 
     constructor(fileRoot?: string) {
         this._fileRoot = fileRoot;
+    }
+
+    public Message(...messages: IFormat[]): void {
+        let str: string = '';
+
+        for (let message of messages) {
+            str += this._reset;
+            str += message.background === null || message.background === undefined ? '' : message.background;
+            str += message.color === null || message.color === undefined ? '' : message.color;
+            str += message.message;
+            str += this._reset;
+            str += ' ';
+        }
+
+        console.log(str);
     }
 
     Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success'): void;
