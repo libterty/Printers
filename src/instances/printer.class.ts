@@ -27,9 +27,9 @@ class Printer {
         console.log(str);
     }
 
-    Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success'): void;
-    Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success', type: string): void;
-    Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success', type?: string): void {
+    public Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success'): void;
+    public Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success', type: string): void;
+    public Log(message: any, error: Error, mode: 'message' | 'warning' | 'info' | 'error' | 'success', type?: string): void {
         let font: EFontColor = EFontColor.white;
         let back: EBackColor = EBackColor.white;
         let title: string = 'Message';
@@ -69,5 +69,31 @@ class Printer {
         message = typeof message === 'object' ? JSON.stringify(message) : message;
 
         // Message Fn
+        this.Message(
+            {
+                message: '  ',
+                background: back,
+            },
+            {
+                message: Date,
+                color: font,
+            },
+            {
+                message: title,
+                color: font,
+            },
+            {
+                message: '--->',
+                color: font,
+            },
+            {
+                message,
+            },
+            {
+                message: `(${path})`,
+            },
+        );
+
+        // Log Write
     }
 }
