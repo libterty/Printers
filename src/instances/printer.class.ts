@@ -1,5 +1,6 @@
 import { EFontColor, EBackColor } from 'src/enums';
 import { IFormat } from 'src/interfaces';
+import { DateTime } from './index';
 
 class Printer {
     /**
@@ -33,7 +34,7 @@ class Printer {
         let font: EFontColor = EFontColor.white;
         let back: EBackColor = EBackColor.white;
         let title: string = 'Message';
-        // const date: string = DateTime
+        const date: string = DateTime.ToString(new Date());
 
         switch (mode) {
             case 'warning':
