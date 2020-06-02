@@ -1,5 +1,5 @@
-import { EFontColor, EBackColor } from 'src/enums';
-import { IFormat } from 'src/interfaces';
+import { EFontColor, EBackColor } from '../enums';
+import { IFormat } from '../interfaces';
 import { DateTime, Log as WriteLog } from './index';
 
 class Printer {
@@ -76,7 +76,7 @@ class Printer {
                 background: back,
             },
             {
-                message: Date,
+                message: date,
                 color: font,
             },
             {

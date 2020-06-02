@@ -1,5 +1,4 @@
 import * as Moment from 'moment';
-import { EAlignType } from '../enums';
 
 class DateTime {
     /**
