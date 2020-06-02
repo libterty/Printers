@@ -1,22 +1,16 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "baseUrl": "./",
-    "noImplicitAny": false,
-    "strictPropertyInitialization": false,
-    "sourceMap": false,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "outDir": "dist",
-    "declaration": true,
-    "experimentalDecorators": true
-  },
-  "exclude": [
-    ".git",
-    ".cache",
-    "node_modules",
-    "logs"
-  ]
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "baseUrl": "./",
+        "noImplicitAny": false,
+        "strictPropertyInitialization": false,
+        "sourceMap": false,
+        "typeRoots": ["node_modules/@types"],
+        "outDir": "dist",
+        "declaration": true,
+        "experimentalDecorators": true,
+        "lib": ["ES2017", "ES2017.Object"]
+    },
+    "exclude": [".git", ".cache", "node_modules", "logs"]
 }
