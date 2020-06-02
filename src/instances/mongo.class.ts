@@ -3,9 +3,13 @@ import { Printer } from '.';
 import { IMongoRequest } from '../interfaces/mongo.interface';
 import { MongoLog } from '../models';
 
-class MongoServe {
-    constructor() {
-        this.Initization();
+export class MongoServe {
+    private _baseUrl: string = 'mongodb://127.0.0.1/';
+    private _dbName: string = 'logs';
+
+    constructor(baseUrl?: string, dbName?: string) {
+        this._baseUrl = baseUrl || 'mongodb://127.0.0.1/';
+        this._dbName = dbName || 'logs';
     }
 
     /**
@@ -17,8 +21,8 @@ class MongoServe {
     public Initization(): Promise<void>;
     public Initization(baseUrl: string, dbName: string): Promise<void>;
     public Initization(baseUrl?: string, dbName?: string): Promise<void> {
-        baseUrl = baseUrl || 'mongodb://127.0.0.1/';
-        dbName = dbName || 'logs';
+        baseUrl = baseUrl || this._baseUrl;
+        dbName = dbName || this._dbName;
 
         let url: string = `${baseUrl}${dbName}`;
         return new Mongoose()
@@ -72,5 +76,3 @@ class MongoServe {
         }
     }
 }
-
-export default new MongoServe();
