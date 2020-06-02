@@ -1,1 +1,1 @@
-export * from './instances';
+export { Printer } from './instances/index';

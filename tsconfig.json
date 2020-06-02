@@ -2,15 +2,14 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "baseUrl": "./",
         "noImplicitAny": false,
         "strictPropertyInitialization": false,
         "sourceMap": false,
-        "typeRoots": ["node_modules/@types"],
         "outDir": "dist",
         "declaration": true,
         "experimentalDecorators": true,
         "lib": ["ES2017", "ES2017.Object"]
     },
+    "include": ["src"],
     "exclude": [".git", ".cache", "node_modules", "logs"]
 }
