@@ -1,5 +1,5 @@
 {
-    "name": "Printers",
+    "name": "printers",
     "version": "1.0.0",
     "description": "A Printer module for logger",
     "main": "src/index.ts",
