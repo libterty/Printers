@@ -13,6 +13,10 @@ class FileServe {
         return realpath;
     }
 
+    /**
+     * Get Path
+     * @param {string} filename
+     */
     public GetPath(filename: string): string {
         filename = filename.replace(/\/|\\/g, '/');
         let path: string = filename.substr(0, filename.lastIndexOf('/'));
@@ -41,6 +45,11 @@ class FileServe {
         }
     }
 
+    /**
+     * Write File
+     * @param {string} fileName
+     * @param {any} data
+     */
     public WriteFile(fileName: string, data: any): void {
         try {
             this.CreateFolder(this.GetPath(fileName));
@@ -49,6 +58,79 @@ class FileServe {
             Fs.writeFileSync(realPath, data);
         } catch (error) {
             throw error;
+        }
+    }
+
+    /**
+     * Append File
+     * @param {string} fileName
+     * @param {any} data
+     */
+    public AppendFile(fileName: string, data: any): void {
+        try {
+            this.CreateFolder(this.GetPath(fileName));
+
+            let realPath: string = this.RealPath(fileName);
+
+            Fs.appendFileSync(realPath, data);
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
+     * Read File
+     * @param {string} fileName
+     * @returns {Buffer}
+     */
+    public ReadFile(fileName: string): Buffer {
+        try {
+            this.CreateFolder(this.GetPath(fileName));
+
+            let realPath: string = this.RealPath(fileName);
+
+            let buffer: Buffer = Fs.readFileSync(realPath);
+
+            return buffer;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
+     * Get File Status
+     * @param {string} fileName
+     * @returns {Fs.Stats}
+     */
+    public GetFileStatus(fileName: string): Fs.Stats {
+        try {
+            this.CreateFolder(this.GetPath(fileName));
+
+            let realPath: string = this.RealPath(fileName);
+
+            let status = Fs.statSync(realPath);
+
+            return status;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
+     * Check if File Alive
+     * @param {string} fileName
+     * @returns {boolean}
+     */
+    public GetFileAlive(fileName: string): boolean {
+        try {
+            this.CreateFolder(this.GetPath(fileName));
+            let realPath: string = this.RealPath(fileName);
+
+            Fs.accessSync(fileName);
+
+            return true;
+        } catch (error) {
+            return false;
         }
     }
 }
