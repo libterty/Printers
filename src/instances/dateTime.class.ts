@@ -15,8 +15,10 @@ class DateTime {
      * Convert date to format string use moment
      * @param {Date} date
      */
-    public ToString(date: Date): string {
+    public ToString(date: Date, format?: string): string {
         try {
+            if (format) this._format = format;
+
             return Moment(date).format(this._format);
         } catch (error) {
             throw error;
