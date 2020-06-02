@@ -1,1 +1,3 @@
-export { Printer } from './instances/index';
+import { Printer } from './instances/index';
+
+export { Printer };
