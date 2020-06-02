@@ -10,9 +10,9 @@ class RedisServe {
         this._port = port || 6379;
     }
 
-    publicgit  Initization(): void;
-    publicgit  Initization(host: string, port: number): void;
-    publicgit  Initization(host?: string, port?: number): void {
+    public Initization(): void;
+    public Initization(host: string, port: number): void;
+    public Initization(host?: string, port?: number): void {
         this._host = host || this._host;
         this._port = port || this._port;
 
