@@ -1,6 +1,6 @@
 {
-    "name": "printers",
-    "version": "1.0.0",
+    "name": "log-printers",
+    "version": "1.0.1",
     "description": "A Printer module for logger",
     "main": "src/index.ts",
     "scripts": {
