@@ -1,3 +1,3 @@
-import { Printer } from './instances/index';
+import { Printer, RedisServe, MongoServe } from './instances/index';
 
-export { Printer };
+export { Printer, RedisServe, MongoServe };
