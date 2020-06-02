@@ -1,6 +1,6 @@
 import { EFontColor, EBackColor } from 'src/enums';
 import { IFormat } from 'src/interfaces';
-import { DateTime } from './index';
+import { DateTime, Log as WriteLog } from './index';
 
 class Printer {
     /**
@@ -96,5 +96,8 @@ class Printer {
         );
 
         // Log Write
+        WriteLog.Write(`${date} ${title} ---> ${message} (${path})`, type);
     }
 }
+
+export default new Printer();
