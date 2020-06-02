@@ -1,6 +1,6 @@
 {
     "name": "log-printers-exec",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A Printer module for logger",
     "main": "src/index.ts",
     "scripts": {
