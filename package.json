@@ -1,10 +1,10 @@
 {
     "name": "log-printers-exec",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A Printer module for logger",
     "main": "src/index.ts",
     "scripts": {
-        "build": "rm -rf ./dist && tsc -p .",
+        "build": "rm -rf ./dist && tsc",
         "postinall": "./node_modules/.bin/pm2 install typescript & ./node_modules/.bin/pm2 install ts-node",
         "prerestart": "tsc --watch",
         "start": "ts-node src/index.ts",
