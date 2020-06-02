@@ -17,8 +17,8 @@ export class RedisServe {
             this._client = await Redis.createClient(this._url);
 
             this._client.on('error', (error) => {
-                Printer.Log(`Connect Fail: ${error.message}`, new Error(), 'error')
-            })
+                Printer.Log(`Connect Fail: ${error.message}`, new Error(), 'error');
+            });
         } catch (error) {
             throw error;
         }
@@ -49,7 +49,7 @@ export class RedisServe {
             let paths = path.match(/at .*?\(.*?\)\\n/g);
             path = paths && paths.length > 0 ? paths[0].substring(paths[0].lastIndexOf('workspace'), paths[0].lastIndexOf(')')) : '';
 
-            let key = `${nanoid(10)}_${new Date().toISOString()}`;
+            let key = `${nanoid(10)}`;
 
             await this._client.MSET(key, JSON.stringify({ title, message, path }));
         } catch (error) {
