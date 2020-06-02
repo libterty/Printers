@@ -1,15 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": false,
-        "strictPropertyInitialization": false,
-        "sourceMap": false,
-        "outDir": "dist",
-        "declaration": true,
-        "experimentalDecorators": true,
-        "lib": ["ES2017", "ES2017.Object"]
-    },
-    "include": ["src"],
-    "exclude": [".git", ".cache", "node_modules", "logs"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "sourceMap": false,
+    "outDir": "dist",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2017", "ES2017.Object"]
+  },
+  "include": ["src", "README.md"],
+  "exclude": [".git", ".cache", "node_modules", "logs"]
 }

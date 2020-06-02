@@ -1,6 +1,6 @@
 {
     "name": "log-printers-exec",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A Printer module for logger",
     "main": "dist/index.js",
     "scripts": {
