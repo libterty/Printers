@@ -8,7 +8,7 @@
 ## Installation
 
 ```shell
-npm install log-printers
+npm install log-printers-exec
 ```
 
 ### Using Local File Generator Printer
