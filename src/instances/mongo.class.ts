@@ -1,6 +1,6 @@
 import { Mongoose } from 'mongoose';
 import { Printer } from '.';
-import { IMongoRequest } from 'src/interfaces/mongo.interface';
+import { IMongoRequest } from '../interfaces/mongo.interface';
 import { MongoLog } from '../models';
 
 class MongoServe {
