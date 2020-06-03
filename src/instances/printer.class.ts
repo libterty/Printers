@@ -34,7 +34,7 @@ class Printer {
         let font: EFontColor = EFontColor.white;
         let back: EBackColor = EBackColor.white;
         let title: string = 'Message';
-        const date: string = DateTime.ToString(new Date());
+        const date: string = DateTime.ToString(new Date(), 'YYYY-MM-DD HH:mm:ss');
 
         switch (mode) {
             case 'warning':

@@ -7,7 +7,7 @@ class DateTime {
     private _format: string = '';
 
     constructor() {
-        this._format = 'YYYY/MM/DD HH:mm:ss';
+        this._format = 'YYYY-MM-DD';
     }
 
     /**
